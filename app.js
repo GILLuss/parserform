@@ -1,5 +1,8 @@
 require('chromedriver');
 
+const GoogleSpreadsheet = require('google-spreadsheet');
+const {promisify} = require('util');
+const creds = require('./Google_sheets_Node.json');
 const chrome = require('selenium-webdriver/chrome');
 const {Builder, By, until} = require('selenium-webdriver');
 const webdriver = require('selenium-webdriver');
@@ -19,10 +22,29 @@ readXlsxFile('./users.xlsx').then((rows) => {
   getName(rows);
 });
 
+async function accessSpreadsheet()
+{
+  const doc = new GoogleSpreadsheet('1-UOoem0tCxBFonUk1kRwkTkvcvo15M8RKNbxcqkDO7w');
+  await promisify(doc.useServiceAccountAuth)(creds);
+  const info = await promisify(doc.getInfo)();
+  const sheet = info.worksheets[0];
+  const roWs = await promisify(sheet.getRows)({
+offset: 1
+  });
+  console.log(roWs);
+  //const row = {
+  //  userName: name,
+  //  userEmail: email,
+  //  UserPass: password
+  }
+ // await promisify(sheet.addRow)(row);
+//}
+
+accessSpreadsheet();
 //функция заполнения полей.
 function getName(rows) {
 
-  async function exTest(){
+ /* async function exTest(){
     const workbook = new Excel.Workbook();
     const worksheet = workbook.addWorksheet("My Sheet");
     worksheet.columns = [
@@ -30,20 +52,25 @@ function getName(rows) {
       {header: 'Email', key: 'email1', width: 35}, 
       {header: 'Pass', key: 'password1', width: 35},
       {header: 'Reg Time', key: 'time', width: 20}
-    ];
-  let column = rows.shift();
+    ];*/
 
+
+
+  let column = rows.shift();
+var array =new Array();
 let name = column[0];
 let email = column[1];
 let password = column[2];
 var now = new Date();
 
-worksheet.addRow({name1: name, email1: email, password1: password, time: now,});
+
+//worksheet.addRow({name1: name, email1: email, password1: password, time: now});
 // save under export.xlsx
-workbook.xlsx.writeFile('Results.xlsx');
+//workbook.xlsx.writeFile('Results.xlsx');
 
   driver.get('https://portal.kgainfo.spb.ru/KGAMap/Auth/Register').then(() => {
     driver.wait(
+
       until.elementLocated(By.xpath('//*[@id="fio"]')), 3000
     ).sendKeys(name).then(() => {
       driver.wait(
@@ -61,7 +88,9 @@ workbook.xlsx.writeFile('Results.xlsx');
               driver.wait(
                 until.elementLocated(By.xpath('//*[@id="regButton"]')), 3000
               ).sendKeys(webdriver.Key.ENTER).then(() => {
+
                 getName(rows);
+              
               }).catch(() => {
               });
             }).catch(() => {
@@ -72,8 +101,12 @@ workbook.xlsx.writeFile('Results.xlsx');
         });
       }).catch(() => {
       });
+
+    })
+
     });
-  });
+
 };
-exTest();
-}
+
+//exTest();
+//}

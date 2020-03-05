@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "skilled-box-270205",
+  "private_key_id": "c2c0f4f050e3d9b279a7d9a3c8b0dc9df188b3af",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCn5SS215sKDZJz\nqIPEM3kopzwFRn+/9DShD/4ko+pOoG5elh7g7ngwcjCtkImZOJ08ifsaJbz9JLVm\nwBZKubCUXNQPfmBVrdyQxQe4DYzKjeXLhMFuje77ilbu/Dcx0eAhpsgP7kRynGKW\n1z19uJlW44LNtQSzs+vfDNHKo5DZGGhs1mXECiuN6YyzbrT9SY62AZNV6y6BGGW7\nYEPtdZ/BhnDek6eLfWTdbI1rANEyiLJTlurt2SQgu5j16atErc7faUV5ppO7lAQF\nViyQeRq1Cw4j/QT/7/RyHbbN7yPsOHAHp/pruHUTS6HybsyGAOe5Lcvz0RJr+Zee\nBteb3b5PAgMBAAECggEAE7yEDFpcB1qBFMeCddX3MCg4jgYzjkUOysAuh/Ac4xFI\n6CWNi7N8vXUu87hB9JkLIsq1keVNyhQ+ns2F0VLyxv4Cj6+zc170xq/isGgnXMhB\ncyMv+ecFaNxiS8WqV1jsmAgbDIRd13s6u7Chsd25aNVl0visjNNhrt666q8/n8Vl\n6D1jFfWjCiQZ8KohuMTd+p4tEYt1t5XjAurY9wwkQrAfPPc6qRcxLi+gGcXXfWdn\nJgfvd0MZm7RvLUstbQ+UgXRrJxORaqhDep8Yy//N1QtjOH1wuizAvyxLnZMOk8lm\nEJHiSWBpJ/RbGBKYtdiVhpFSEGzqclXqCZT1NBDzQQKBgQDdYrvlniH9izwCjr8J\nArzH04cN0ahw8q3A7J9gVuKZ7uBiJpjNvh3TykMjytKKhfYBk0GFyfkk/OyUfaL+\nLqkqKofPJtCD/lCM9fOfaauSZsRQxbS1yIBP+ISOkf7wCU7vpxJ4Vg9EQLoEN5b8\n0No3U4Ful0y+jMcQT1k6Zw2IDQKBgQDCJWAKAXaidDfnjyav3q8cgD9AJIrOd/dz\nVd6Im/y3LJ8U7f7ZyqdEVdwcfKCLJuTyw43V4Zi5Q8YmLG9CNkilNC93AURd9DxZ\ndNlENatx0H7SgZ3eP8LAhezNhZ5z/cMo2hKfN9013HzHlbPlwd5FBxL01HFbmyGi\ntIbXp/tMywKBgQCakltawQQ+gL6PkpczdWPVqY08SsxuwCIs94l3vHJOxAiKvyQl\nUr6Ep04laXGDInFXPDedcB2yg52zN91b17xpInTcX99qqWAYa4mEHkWa3IHpW4EH\nA00DiSMUYD893WHt1hsBRiU2pHK8iwuyzSfvRTCzxJPi32wFqUFFk7pQ6QKBgQCb\nzojjnscJmwFeiUi/7ZNU6StZm7n19tsUqX4c3iqTCnFkx5c2S+eu9MTf67if1Af7\nN6s1UYZScCyuaAyl85CbXGUXOWIXkLF6DUdr8TJ09aFB6Rm7yinOfexMCAbhCW88\n8r3tH1UdK6TMO70TD2IEvaed6nxKyxXUUNLCcaJAvwKBgGR6AJz8GnUTYXVOcrw0\n1/4cqzTzGkgaFIGhVkV/VrO8XZ0MPpLfq60v0z6T0SwOcJDyg8rDl0P0cuuwkvjA\nLL8JMh1ywfZDF2ZPqMms6Bn4aorclVHNsvtYhImF1FNEmNSe1hkNtwVeyUyZZvSg\nZtHK/d5A6ya+jiph+TR6rvK+\n-----END PRIVATE KEY-----\n",
+  "client_email": "sheets@skilled-box-270205.iam.gserviceaccount.com",
+  "client_id": "107070330935693939306",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sheets%40skilled-box-270205.iam.gserviceaccount.com"
+}
