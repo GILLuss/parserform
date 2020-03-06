@@ -1,8 +1,27 @@
 require('chromedriver');
 
-const GoogleSpreadsheet = require('google-spreadsheet');
-const {promisify} = require('util');
-const creds = require('./Google_sheets_Node.json');
+//const GoogleSpreadsheet = require('google-spreadsheet');
+//const {promisify} = require('util');
+
+//const {google} = require('googleapis');
+//const keys = require('./keys.json');
+
+/*const client = new google.auth.JWT(
+ keys.client_email, 
+ null,
+ keys.privat_Key,
+ ['https://www.googleapis.com/auth/spreadsheets']
+);
+client.authorize(function(err,tokens){
+  if(err){
+    console.log(err);
+    return;
+  }
+  else{
+    console.log('connect');
+  }
+});*/
+
 const chrome = require('selenium-webdriver/chrome');
 const {Builder, By, until} = require('selenium-webdriver');
 const webdriver = require('selenium-webdriver');
@@ -22,29 +41,41 @@ readXlsxFile('./users.xlsx').then((rows) => {
   getName(rows);
 });
 
-async function accessSpreadsheet()
+/*async function accessSpreadsheet()
 {
-  const doc = new GoogleSpreadsheet('1-UOoem0tCxBFonUk1kRwkTkvcvo15M8RKNbxcqkDO7w');
+  const doc = new GoogleSpreadsheet('1wQpZ8O8t6FhBX3WpMhy9wfBiGVsv803dqQ2wqCC5_VI');
   await promisify(doc.useServiceAccountAuth)(creds);
   const info = await promisify(doc.getInfo)();
   const sheet = info.worksheets[0];
-  const roWs = await promisify(sheet.getRows)({
-offset: 1
-  });
-  console.log(roWs);
-  //const row = {
-  //  userName: name,
-  //  userEmail: email,
-  //  UserPass: password
+  console.log('Title: ${sheet.title}, Rows: ${sheet.rowCount}');
+  
+ // const roWs = await promisify(sheet.getRows)({
+
   }
- // await promisify(sheet.addRow)(row);
+
+ 
+ // console.log(roWs);
+ /* const row = {
+    userName: name,
+    userEmail: email,
+    UserPass: password
+  }
+  await promisify(sheet.addRow)(row);*/
 //}
 
-accessSpreadsheet();
+//accessSpreadsheet();
 //функция заполнения полей.
 function getName(rows) {
 
- /* async function exTest(){
+  let column = rows.shift();
+
+let name = column[0];
+let email = column[1];
+let password = column[2];
+var now = new Date();
+
+
+  async function exTest(){
     const workbook = new Excel.Workbook();
     const worksheet = workbook.addWorksheet("My Sheet");
     worksheet.columns = [
@@ -52,23 +83,26 @@ function getName(rows) {
       {header: 'Email', key: 'email1', width: 35}, 
       {header: 'Pass', key: 'password1', width: 35},
       {header: 'Reg Time', key: 'time', width: 20}
-    ];*/
+    ];
+
+      var data = [{name1: name, email1: email, password1: password, time: now}];
+      for(i in data){
+        worksheet.addRow(data[i]);
+      }
+    
+
+//worksheet.addRow({name1: name, email1: email, password1: password, time: now}).commit();
 
 
-
-  let column = rows.shift();
-var array =new Array();
-let name = column[0];
-let email = column[1];
-let password = column[2];
-var now = new Date();
+await workbook.xlsx.writeFile('Results.xlsx');
 
 
-//worksheet.addRow({name1: name, email1: email, password1: password, time: now});
-// save under export.xlsx
-//workbook.xlsx.writeFile('Results.xlsx');
+};
 
-  driver.get('https://portal.kgainfo.spb.ru/KGAMap/Auth/Register').then(() => {
+exTest();
+imeout_id = window.setTimeout()
+setTimeout(elementLocated,10000);
+driver.get('https://portal.kgainfo.spb.ru/KGAMap/Auth/Register').then(() => {
     driver.wait(
 
       until.elementLocated(By.xpath('//*[@id="fio"]')), 3000
@@ -104,9 +138,7 @@ var now = new Date();
 
     })
 
-    });
+    })
 
-};
 
-//exTest();
-//}
+}

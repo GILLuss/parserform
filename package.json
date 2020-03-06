@@ -11,8 +11,10 @@
     "chromedriver": "^80.0.1",
     "exceljs": "^3.8.1",
     "google-spreadsheet": "^3.0.9",
+    "googleapis": "^39.2.0",
     "read-excel-file": "^4.0.5",
-    "selenium-webdriver": "^4.0.0-alpha.5"
+    "selenium-webdriver": "^4.0.0-alpha.6",
+    "webdriver": "^5.18.7"
   },
   "devDependencies": {},
   "repository": {
