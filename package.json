@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "parserform",
   "version": "1.0.0",
@@ -28,3 +29,35 @@
   "homepage": "https://github.com/GILLuss/parserform#readme",
   "description": ""
 }
+=======
+{
+  "name": "parserform",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^80.0.1",
+    "exceljs": "^3.8.1",
+    "google-spreadsheet": "^3.0.9",
+    "googleapis": "^39.2.0",
+    "read-excel-file": "^4.0.5",
+    "selenium-webdriver": "^4.0.0-alpha.6",
+    "webdriver": "^5.18.7"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GILLuss/parserform.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/GILLuss/parserform/issues"
+  },
+  "homepage": "https://github.com/GILLuss/parserform#readme",
+  "description": ""
+}
+>>>>>>> a2e9ff2bffac79869cb1b719658ebe86df2ef03d
