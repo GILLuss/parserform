@@ -34,6 +34,9 @@ function getName(rows) {
     driver.quit();
   }
 
+  var sleep =  Math.floor(Math.random()*10);
+  console.log(sleep);
+
   let column = rows.shift();
   let name = column[0];
   let email = column[1];
