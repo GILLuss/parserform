@@ -17,20 +17,18 @@ var driver = new Builder()
 const workbook = new Excel.Workbook();
 const worksheet = workbook.addWorksheet("My Sheet");
 worksheet.columns = [
-  {header: 'Name', key: 'name1', width: 35},
-  {header: 'Email', key: 'email1', width: 35},
-  {header: 'Pass', key: 'password1', width: 35},
-  {header: 'Reg Time', key: 'time', width: 20}
+  {header: 'key', key: 'key1', width: 35},
+ 
 ];
 
-readXlsxFile('./users.xlsx').then((rows) => {
+readXlsxFile('./Nomer.xlsx').then((rows) => {
   getName(rows);
 });
 
 //функция заполнения полей.
 function getName(rows) {
   if (rows.length === 0) {
-    workbook.xlsx.writeFile('users.xlsx');
+    workbook.xlsx.writeFile('out.xlsx');
     driver.quit();
   }
 
@@ -38,22 +36,22 @@ function getName(rows) {
   
 
   let column = rows.shift();
-  let name = column[0];
-  let email = column[1];
-  let password = column[2];
-  var now = new Date();
+  let key = column[1];
+//  let email = column[1];
+// let password = column[2];
+ // var now = new Date();
   
 
-  driver.get('https://portal.kgainfo.spb.ru/KGAMap/Auth/Register').then(() => {
+  driver.get('https://rosreestr.ru/wps/portal/p/cc_present/EGRN_6').then(() => {
     driver.wait(
-      until.elementLocated(By.xpath('//*[@id="fio"]')), 100000
-    ).sendKeys(name).then(() => {
+      until.elementLocated(By.xpath('//*[@id="v-Z7_01HA1A42KGCRB0AB2K9HQJ20C3"]/div/div[2]/div/div[1]/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div[2]/div/div/div/div[1]/div/div/div/div[4]/div/div/div/div[1]/div/div/div/div/div[2]/div/div/div/div[2]/div/div/div/div[1]/div/input')), 3000
+    ).sendKeys(key).then(() => {
       driver.wait(
-        until.elementLocated(By.xpath('//*[@id="username"]')), 100000
-      ).sendKeys(email).then(() => {
+        until.elementLocated(By.xpath('//*[@id="v-Z7_01HA1A42KGCRB0AB2K9HQJ20C3"]/div/div[2]/div/div[1]/div/div/div/div[1]/div/div/div/div/div[2]/div/div/div/div[2]/div/div/div/div[1]/div/div/div/div[4]/div/div/div/div[1]/div/div/div/div/div[3]/div/div/div/div[2]/div/div/div/div[1]/div/textarea')), 3000
+      ).sendKeys(key).then(() => {
         driver.wait(
-          until.elementLocated(By.xpath('//*[@id="password1"]')), 100000
-        ).sendKeys(password).then(() => {
+          /*until.elementLocated(By.xpath('//*[@id="v-Z7_01HA1A42KGCRB0AB2K9HQJ20C3"]/div/div[2]/div/div[1]/div/div/div/div[1]/div/div/div/div/div[5]/div/div/div/div[2]/div/div/div/div[1]/div/div/span/span')), 100000
+        ).click().then(() => {
           driver.wait(
             until.elementLocated(By.xpath('//*[@id="password2"]')), 100000
           ).sendKeys(password).then(() => {
@@ -63,13 +61,13 @@ function getName(rows) {
               driver.wait(
               until.elementLocated(By.xpath('//*[@id="regButton"]')), 100000
               ).sendKeys(webdriver.Key.ENTER).then(() => {
-                worksheet.addRow({name1: name, email1: email, password1: password, time: now});
+                //worksheet.addRow({name1: name, email1: email, password1: password, time: now});
                 getName(rows);
               }).catch(() => {
               });
             }).catch(() => {
             });
-          }).catch(() => {
+         })*/.catch(() => {
           });
         }).catch(() => {
         });
